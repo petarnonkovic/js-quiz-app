@@ -2,3 +2,4 @@
 
 # js-quiz-app
 
+run json-server
