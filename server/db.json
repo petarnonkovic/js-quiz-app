@@ -1,0 +1,50 @@
+{
+    "questions": [
+    {
+        "id": 1,
+        "question": "Inside which HTML element do we put the JavaScript?",
+        "answers": [
+            { "value": "a", "text": "<js>" },
+            { "value": "b", "text": "<scripting>" },
+            { "value": "c", "text": "<script>" },
+            { "value": "d", "text": "<javascript>" }
+        ],
+        "theAnswer": "c"
+    },
+    {
+        "id": 2,
+        "question": "What is the correct syntax for referring to an external script called 'xxx.js'?",
+        "answers": [
+            { "value": "a", "text": "<script src='xxx.js'>" },
+            { "value": "b", "text": "<script name='xxx.js'>" },
+            { "value": "c", "text": "<script href='xxx.js'>" },
+            { "value": "d", "text": "<script source='xxx.js'>" }
+        ],
+        "theAnswer": "a"
+    },
+    {
+        "id": 3,
+        "question": "How do you write \"Hello World\" in an alert box?",
+        "answers": [
+            { "value": "a", "text": "msgBox('Hello World');" },
+            { "value": "b", "text": "msg('Hello World');" },
+            { "value": "c", "text": "alertBox('Hello World');" },
+            { "value": "d", "text": "alert('Hello World');" }
+        ],
+        "theAnswer": "d"
+    },
+    {
+        "id": 4,
+        "question": "How to write an IF statement in JavaScript?",
+        "answers": [
+            { "value": "a", "text": "if (i == 5)" },
+            { "value": "b", "text": "if i = 5 then" },
+            { "value": "c", "text": "if i = 5" },
+            { "value": "d", "text": "if i == 5 then" }
+        ],
+        "theAnswer": "a"
+    }],
+    "totalQuestions": [4],
+    "questionsFrom": ["w3school test quiz"],
+    "codeBy": ["nonkovic.petar@gmail.com"]
+}

@@ -1,0 +1,23 @@
+{
+  "name": "js-quiz",
+  "version": "0.0.1",
+  "description": "Simple javascript quiz app",
+  "main": "app/javascript/app.js",
+  "repository": "git@github.com:petroniuss/js-quiz-app.git",
+  "author": "nonkovic.petar@gmail.com",
+  "scripts": {
+    "sass:dist": "sass app/sass/app.scss > dist/css/app.css",
+    "sass": "npm run sass:dist",
+    "watch:sass": "gulp watch"
+  },
+  "license": "MIT",
+  "private": true,
+  "devDependencies": {
+    "browser-sync": "^2.23.6",
+    "gulp": "^3.9.1",
+    "gulp-notify": "^3.2.0",
+    "gulp-plumber": "^1.2.0",
+    "gulp-sass": "^3.1.0",
+    "gulp-webpack": "^1.5.0"
+  }
+}

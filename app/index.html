@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <title>Javascript Quiz</title>
+  <link rel="stylesheet" type="text/css" href="css/app.css">
+</head>
+<body>
+
+    <div class="container">
+        <!-- main-title -->
+        <header>
+            <h1>QUESTIONARE! <br><small>JavaScript/JSON powered quiz</small></h1>
+        </header>
+        <main>
+            <!-- front-screen -->
+            <div class="front-screen" id="front">
+                <button id="start">Start Quiz!</button>
+            </div>
+            <!-- loader-screen -->
+            <div class="loader" id="loader">
+                <span></span>
+            </div>
+            <!-- question-screen -->
+            <div class="questionare" id="questionare"></div>
+        </main>
+        <footer></footer>
+    </div>
+
+    <!-- Template -->
+    <script id="questionare-template" type="text/x-handlebars-template">
+        <div class="wrapp">
+            <!-- question -->
+            <p id="question" class="question">{{question}}</p>
+
+            <!-- answers -->
+            <div class="q-form">
+                <input id="theAnswer" type="hidden" value={{theAnswer}} class="visuallyhidden">
+                {{#each answers as |model|}}
+                    <div class="q-item">
+                        <input onclick="handleAnswer(this.value)" type="radio" value={{model.value}} name="answer" id="answer-{{model.value}}" class="visuallyhidden">
+                        <label for="answer-{{model.value}}"><code>{{model.text}}</code></label>
+                    </div>
+                {{/each}}
+            </div>
+            <!-- submit button -->
+            <p class="submit-block"><button class='submit' id="submit" type="submit" disabled>Next</button></p>
+        </div>
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+    <script src="javascript/app.js"></script>
+</body>
+</html>
