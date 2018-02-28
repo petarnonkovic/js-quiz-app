@@ -8,9 +8,10 @@
   "scripts": {
     "start:dev": "gulp",
     "build:dist": "gulp build",
-    "serve:dist": "gulp serve",
+    "start:dist": "gulp serve",
     "test": "mocha",
-    "clean": "gulp clean:dist"
+    "clean": "gulp clean:dist",
+    "api:server": "json-server --watch server/db.json --port 3001"
   },
   "license": "MIT",
   "private": true,

@@ -32,7 +32,8 @@ gulp.task('browserSync', ['sass'], () => {
     gulp.watch('app/javascript/*.js').on('change', browserSync.reload);
 });
 
-gulp.task('serve', ['build'], () => {
+// serve from dist folder after build process finish
+gulp.task('serve:dist', ['build'], () => {
     browserSync.init({
         server: {
             baseDir: './dist'
@@ -101,10 +102,14 @@ gulp.task('html:build', () => {
         .pipe(browserSync.stream())
 });
 
+// compile sass and run dev server
 gulp.task('default', ['browserSync']);
+// build dist
 gulp.task('build', ['js-minify:build', 'css:build', 'html:build']);
+// clean up, build and run server from dist
+gulp.task('serve', ['clean:dist', 'serve:dist']);
 
-
+// empty dist folder
 gulp.task('clean:dist', () => {
     return del(['dist']).then(paths => {
         console.log('Files and folders are deleted in:\n', paths.join('\n'));
