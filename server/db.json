@@ -44,7 +44,9 @@
         ],
         "theAnswer": "a"
     }],
-    "totalQuestions": [4],
-    "questionsFrom": ["w3school test quiz"],
-    "codeBy": ["nonkovic.petar@gmail.com"]
+    "meta": {
+        "totalQuestions": "4",
+        "questionsFrom": "w3school test quiz",
+        "codeBy": "nonkovic.petar@gmail.com"
+    }
 }

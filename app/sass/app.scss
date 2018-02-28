@@ -1,5 +1,6 @@
 // imports
 @import "colors";
+@import "util";
 
 *,
 *:after,
@@ -13,22 +14,18 @@ body {
 }
 
 .container {
-    width: 100%;
+    @include dimensions();
     max-width: 640px;
-    height: 100%;
     padding: 30px 20px;
     margin: 20px auto;
     header {
         margin-bottom: 1.5rem;
         h1 {
-            text-align: center;
-            font-size: 1.8rem;
-            line-height: 2.1rem;
+            @include typography(1.8rem, 2.1rem, center);
             color: map-get($maincolors, 'dark-blue');
         }
         small {
-            font-size: 0.8rem;
-            font-weight: lighter;
+            @include typography(0.8rem, 1rem, left, lighter);
             padding-top: 5px;
             padding-left: 50%;
             color: map-get($maincolors, 'white');
@@ -40,24 +37,18 @@ body {
 /* First Screen Cover */
 
 main {
-    position: relative;
+    @include placement();
     overflow: hidden;
-    width: 100%;
-    height: 100%;
+    @include dimensions();
     max-width: 600px;
     min-height: 500px;
     > div {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
+        @include displayFlex(center);
         align-items: center;
     }
     .front-screen {
-        width: 100%;
-        height: 80%;
-        position: absolute;
-        top: 0;
-        left: 0;
+        @include dimensions($h: 80%);
+        @include placement(absolute);
         background-color: map-get($maincolors, 'blue');
         border-radius: 4px;
         z-index: 10;
@@ -77,18 +68,13 @@ main {
         }
     }
     .loader {
-        width: 100%;
-        height: 80%;
-        position: absolute;
-        top: 0;
-        left: 0;
+        @include dimensions($h: 80%);
+        @include placement(absolute);
         background-color: map-get($maincolors, 'blue');
         z-index: 5;
         >span {
             display: block;
-            width: 60px;
-            height: 60px;
-            // margin: 80px auto 0;
+            @include dimensions($w: 60px, $h: 60px);
             border-radius: 50%;
             border: 5px solid;
             border-color: darken(map-get($maincolors, 'blue'), 15%) darken(map-get($maincolors, 'blue'), 15%) map-get($maincolors, 'green');
@@ -96,11 +82,8 @@ main {
         }
     }
     .questionare {
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        top: 0;
-        left: 0;
+        @include dimensions();
+        @include placement(absolute);
         background-color: map-get($maincolors, 'blue');
         border-radius: 4px;
         z-index: 1;
@@ -108,20 +91,14 @@ main {
 }
 
 .wrapp {
-    width: 100%;
-    height: 100%;
+    @include dimensions();
     .question {
-        text-align: center;
         word-wrap: break-word;
-        font-size: 1.4rem;
-        line-height: 1.6rem;
+        @include typography(1.4rem, 1.6rem);
         padding: 20px;
     }
     .q-form {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: space-between;
+        @include displayFlex(space-between, wrap);
         .q-item {
             border: 2px solid map-get($maincolors, 'green');
             border-radius: 4px;
@@ -129,9 +106,7 @@ main {
             margin-top: 20px;
             >label {
                 display: block;
-                text-align: center;
-                font-size: 1.4rem;
-                line-height: 1.6rem;
+                @include typography(1.4rem, 1.6rem);
                 padding: 10px;
                 color: map-get($maincolors, 'dark-grey');
                 transition: all 0.3s ease-out;
@@ -172,23 +147,14 @@ main {
     }
 }
 
-
-/* HELPER CLASSES */
-
 .visuallyhidden {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    border: 0;
-    clip: rect(0 0 0 0);
-    overflow: hidden;
+    @extend %hiddenOut;
 }
 
 .final-score {
-    font-size: 2rem;
-    line-height: 2.2rem;
+    @include typography(2rem, 2.2rem, left);
+    // font-size: 2rem;
+    // line-height: 2.2rem;
 }
 
 input[type='radio']:checked+label {

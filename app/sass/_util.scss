@@ -1,0 +1,35 @@
+@mixin displayFlex($justify, $wrap: nowrap, $display: flex, $direction: row) {
+    display: $display;
+    flex-direction: $direction;
+    justify-content: $justify;
+    flex-wrap: $wrap;
+}
+
+@mixin dimensions($w: 100%, $h: 100%) {
+    width: $w;
+    height: $h;
+}
+
+@mixin placement( $position: relative, $top: 0, $left: 0) {
+    position: $position;
+    top: $top;
+    left: $left;
+}
+
+@mixin typography($size, $line-h, $align: center, $weight: normal) {
+    font-size: $size;
+    line-height: $line-h;
+    text-align: $align;
+    font-weight: $weight;
+}
+
+%hiddenOut {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    border: 0;
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
